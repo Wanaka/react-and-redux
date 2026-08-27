@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`_saveQuestion returns a saved question with all expected fields when correctly formatted data is passed 1`] = `
+{
+  "author": "sarahedo",
+  "id": "9vqrcp2sd4gikpk2zq33qs",
+  "optionOne": {
+    "text": "Learn React",
+    "votes": [],
+  },
+  "optionTwo": {
+    "text": "Learn Angular",
+    "votes": [],
+  },
+  "timestamp": 1787836595099,
+}
+`;
