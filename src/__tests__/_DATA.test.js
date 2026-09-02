@@ -15,7 +15,10 @@ describe("_saveQuestion", () => {
 
     const result = await _saveQuestion(input);
 
-    expect(result).toMatchSnapshot();
+    expect(result).toMatchSnapshot({
+      id: expect.any(String),
+      timestamp: expect.any(Number),
+    });
     expect(result).toBeDefined();
     expect(result.id).toBeDefined();
     expect(result.timestamp).toBeDefined();

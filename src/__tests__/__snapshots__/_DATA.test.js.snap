@@ -3,7 +3,7 @@
 exports[`_saveQuestion returns a saved question with all expected fields when correctly formatted data is passed 1`] = `
 {
   "author": "sarahedo",
-  "id": "9vqrcp2sd4gikpk2zq33qs",
+  "id": Any<String>,
   "optionOne": {
     "text": "Learn React",
     "votes": [],
@@ -12,6 +12,6 @@ exports[`_saveQuestion returns a saved question with all expected fields when co
     "text": "Learn Angular",
     "votes": [],
   },
-  "timestamp": 1787836595099,
+  "timestamp": Any<Number>,
 }
 `;
