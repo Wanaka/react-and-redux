@@ -1,10 +1,14 @@
 import { useSelector } from 'react-redux'
-import { Navigate } from 'react-router-dom'
+import { Navigate, useSearchParams } from 'react-router-dom'
 
 function GuestRoute({ children }) {
   const user = useSelector((state) => state.login.user)
+  const [searchParams] = useSearchParams()
 
-  if (user) return <Navigate to="/" />
+  if (user) {
+    const next = searchParams.get('next') || '/'
+    return <Navigate to={next} replace />
+  }
 
   return children
 }

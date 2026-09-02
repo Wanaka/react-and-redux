@@ -4,13 +4,16 @@ const loginSlice = createSlice({
   name: 'login',
   initialState: {
     user: null,
+    loggedOut: false,
   },
   reducers: {
     loginUser(state, action) {
-      state.user = action.payload 
+      state.user = action.payload
+      state.loggedOut = false
     },
     logoutUser(state) {
       state.user = null
+      state.loggedOut = true
     },
   },
 })

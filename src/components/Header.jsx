@@ -1,15 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { logoutUser } from '../store/loginSlice'
 
 function Header() {
   const dispatch = useDispatch()
-  const navigate = useNavigate()
   const user = useSelector((state) => state.login.user)
 
   function handleLogout() {
     dispatch(logoutUser())
-    navigate('/login')
   }
 
   const navStyle = { textDecoration: 'none', color: 'inherit' }

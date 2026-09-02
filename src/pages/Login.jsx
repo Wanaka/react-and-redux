@@ -1,23 +1,18 @@
 import { useDispatch } from 'react-redux'
-import { useNavigate, useLocation } from 'react-router-dom'
 import { loginUser } from '../store/loginSlice'
 import { useUsers } from '../hooks/useUsers'
 
 function Login() {
   const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const location = useLocation()
   const { data: users, isLoading, isError } = useUsers()
 
   if (isLoading) return <p>Loading users...</p>
   if (isError) return <p>Failed to load users.</p>
 
   const userList = Object.values(users)
-  const from = location.state?.from || '/'
 
   function handleSelect(user) {
     dispatch(loginUser({ id: user.id, name: user.name, avatarURL: user.avatarURL }))
-    navigate(from)
   }
 
   return (
